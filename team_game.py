@@ -22,7 +22,6 @@ def noose(h,b,la,ra,rl,ll):
   print("-----")
 
 
-print(word)
 
 while True:
   blanks = ""
@@ -53,7 +52,7 @@ while True:
   print(blanks)
   letter1 = input('What letter is your guess?: ').strip().lower()
   guesses.append(letter1)
-  if letter not in word:
+  if letter1 not in word:
     wrong += 1
   #hope, kasen, scarlette -changes the hangman
   
