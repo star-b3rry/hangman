@@ -8,87 +8,53 @@ word = random.choice(the_list)
 #Scarlette
 guesses = []
 
-print(word)
-#hope
+#hope- only diologe, makes player give letter
 print('Welcome player! Try to guess the word before the hangman is complete. You have 6 wrong guesses.')
-#kasen, hope
+#kasen, hope, scarlette- is the guesses
 wrong = 0
+#hope- makes the hangman
+def noose(h,b,la,ra,rl,ll):
+  print('______')
+  print(f'|    |')
+  print(f"|    {h}")
+  print(f"|   {la}{b}{ra}")
+  print(f"|   {ll} {rl}")
+  print("-----")
+
+
+print(word)
+
 while True:
-    blanks = ""
-    for letter in word:
-      if letter in guesses:
-          blanks += letter
-      else:
-          blanks += "_"
-    if letter not in guesses:
-        wrong += 1
-
-      
-    print(blanks)
-    letter1 = input('What letter is your guess?: ').strip().lower()
-    guesses.append(letter1)
-    #hope, kasen, scarlette- changes the hangman
-    if wrong == 0:
-      print('______')
-      print('|    |')
-      print("|")
-      print("|")
-      print("|")
-      print("-----")
-    elif wrong == 1:
-      print('______')
-      print('|    |')
-      print("|    0")
-      print("|")
-      print("|")
-      print("-----")
-    elif wrong == 2:
-      print('______')
-      print('|    |')
-      print("|    0")
-      print("|    |")
-      print("|")
-      print("-----")
-    elif wrong == 3:
-      print('______')
-      print('|    |')
-      print("|    0")
-      print("|   /|")
-      print("|")
-      print("-----")
-    elif wrong == 4:
-      print('______')
-      print('|    |')
-      print("|    0")
-      print("|   /|\\")
-      print("|")
-      print("-----")
-    elif wrong == 5:
-      print('______')
-      print('|    |')
-      print("|    0")
-      print("|   /|\\")
-      print("|   / ")
-      print("-----")
-    elif wrong == 6:
-      print('______')
-      print('|    |')
-      print("|    0")
-      print("|   /|\\")
-      print("|   / \\")
-      print("-----")
+  blanks = ""
+  for letter in word:
+    if letter in guesses:
+      blanks += letter
     else:
-      print("GAME OVER!")
+     blanks += "_"
+#hope, kasen, scarlette -changes the hangman
+  if wrong == 0:
+    noose(" "," "," "," "," "," ",)
+  elif wrong == 1:
+    noose("O"," "," "," "," "," ",)
+  elif wrong == 2:
+    noose("O","|"," "," "," "," ",)
+  elif wrong == 3:
+    noose("O","|","/"," "," "," ",)
+  elif wrong == 4:
+    noose("O","|","/","\\"," "" ",)
+  elif wrong == 5:
+    noose("O","|","/","\\","/"," ",)
+  elif wrong == 6:
+   noose("O","|","/","\\","/","\\",)
+  else:
+    print("GAME OVER!")
     break
-
-    #hope
-
-
-
-
-# our dude
-#  O 
-# /|\
-# / \
-#Hope, Scarlette
   
+  print(blanks)
+  letter1 = input('What letter is your guess?: ').strip().lower()
+  guesses.append(letter1)
+  if letter not in word:
+    wrong += 1
+  #hope, kasen, scarlette -changes the hangman
+  
+
